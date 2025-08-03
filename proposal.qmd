@@ -39,9 +39,14 @@ Make sure to load the data and use inline code for some of this information.
 ## Questions
 
 The two questions you want to answer.
-Determine correlation of stats such as DVOA vs performance metrics.
-Can I create an algorithm that can predict winner or NFL matchups based on training data?
+What is the correlation of stats such as DVOA and winning percentage
+Can I create an algorithm that can predict predict the NFL matchups based on training data?
 
 ## Analysis plan
 
 -   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
+My dataset will contain these matchups and I can run a correlation matrix to see what the correlation is between these variables.
+To answer the second question, I can feed an algorith with data with team identifiers, performance metrics such as offensive and defense
+ DOVA, rest days (if I can find the metrics), and winning percentage (to that point in the season), for each team in the matchup.
+I will also have points scored for each team and divide my dataset into training and test sets. From there I can use a model such as
+random tree to predict winners for each matchup.
