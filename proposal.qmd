@@ -39,6 +39,8 @@ Make sure to load the data and use inline code for some of this information.
 ## Questions
 
 The two questions you want to answer.
+Determine correlation of stats such as DVOA vs performance metrics.
+Can I create an algorithm that can predict winner or NFL matchups based on training data?
 
 ## Analysis plan
 
