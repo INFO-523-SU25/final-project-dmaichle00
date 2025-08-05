@@ -2,7 +2,7 @@
 title: "Proposal title"
 subtitle: "Proposal"
 author: 
-  - name: "Team Name - Team member 1, Team member 2,..."
+  - name: "Team Drew Maichle - Drew Maichle"
     affiliations:
       - name: "College of Information Science, University of Arizona"
 description: "Project description"
@@ -30,23 +30,45 @@ import numpy as np
 ```{python}
 #| label: load-dataset
 #| message: false
+# Load data in Python
+final_df = pd.read_csv('data/nfl_2024_games_with_dvoa.csv')
+# Display the first few rows of the final DataFrame
+print("\Loaded Final DataFrame from CSV")
+print(final_df.head())
+# Print column names to verify
+print("Column Names:")
+print(final_df.columns.tolist())
+#Print DataFrame info
+print("DataFrame Info:")
+print(final_df.info())
+#Print DataFrame description
+print("DataFrame Description:")
+print(final_df.describe())
+#print data types of each column
+print("Data Types of Each Column:")
+print(final_df.dtypes)
+#data shape
+print(final_df.shape)
 ```
 
-A brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.
-
-Make sure to load the data and use inline code for some of this information.
+This dataset was pulled from the nfl_data_py library. I pulled game data for the 272 games in the 2024 regular season.
+This base data contains a game identifer, home and away teams, and scores for both teams. In addition, I generated DVOA for all teams
+and applied a column displaying the DVOA of each team along with the differential (home dvoa - away). DVOA is a well known proprietary
+metric stemming from ftn fantasy that factors in performance from each snap
 
 ## Questions
 
 The two questions you want to answer.
-What is the correlation of stats such as DVOA and winning percentage
+What is the correlation of stats such as DVOA (Defense-adjusted Value Over Average) and scores within my 2024 dataset?
 Can I create an algorithm that can predict predict the NFL matchups based on training data?
 
 ## Analysis plan
 
 -   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
 My dataset will contain these matchups and I can run a correlation matrix to see what the correlation is between these variables.
-To answer the second question, I can feed an algorith with data with team identifiers, performance metrics such as offensive and defense
+For the first question, I can run a correlation matrix and use python tools to provide a correlation of my target features
+To answer the second question, I can feed an algorith with data with team identifiers, performance metrics such as DVOA
  DOVA, rest days (if I can find the metrics), and winning percentage (to that point in the season), for each team in the matchup.
 I will also have points scored for each team and divide my dataset into training and test sets. From there I can use a model such as
-random tree to predict winners for each matchup.
+random tree to predict winners for each matchup. If I have time, I would like to see if I can find a way to add more data columns such
+as how many days of rest a team is on to see if I can improve predicatability

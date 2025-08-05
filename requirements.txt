@@ -1,2 +1,8 @@
 jupyter
 nbformat
+nfl_data_py
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
