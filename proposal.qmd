@@ -23,6 +23,8 @@ jupyter: python3
 #| label: load-pkgs
 #| message: false
 import numpy as np
+import pandas as pd
+import nfl_data_py as nfl
 ```
 
 ## Dataset
@@ -55,7 +57,27 @@ This dataset was pulled from the nfl_data_py library. I pulled game data for the
 This base data contains a game identifer, home and away teams, and scores for both teams. In addition, I generated DVOA for all teams
 and applied a column displaying the DVOA of each team along with the differential (home dvoa - away). DVOA is a well known proprietary
 metric stemming from ftn fantasy that factors in performance from each snap
+## Data Access
+please view the nfl_2024_games_with_dvoa file in data
+##Description of observations
+My file has the following colums:
+ game_id: game identifier in the format of game_week_away team_home team
+ season: what year is the season
+ week: What week number is the game being played on
+ away_team: Two or three letter indicator of what team is playing away from home
+ home_team: Two or three letter indicator of what team is playing at home
+ away score: Number of points scored by away team
+ home score: Number of points scored by home team
+ game: indentifier in the format away_team @ home_team
+ home_dvoa: performance metric Defense-adjusted Value Over Average for home team
+ away_dvoa: performance metric Defense-adjusted Value Over Average for away team
+ dvoa_diff: home_dvoa - away_dvoa
 
+##Ethical Concerns
+The NFL game data is publicly available so there are no ethical Concerns for that data. DVOA is considered a proprietary metric and 
+total DVOA which I am utilizing is publicly available. Ideally, I would be implementing this split into offensive and defensive DVOA 
+however this is not publicly available along with this statistic being adjusted week by week. I beleive that I have adressed this in an
+ ethical way.
 ## Questions
 
 The two questions you want to answer.
