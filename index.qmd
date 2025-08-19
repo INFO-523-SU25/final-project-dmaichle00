@@ -1,8 +1,8 @@
 ---
-title: "Project Title"
+title: "NFL Score Predictions Using DVOA"
 subtitle: "INFO 523 - Final Project"
 author: 
-  - name: "Team name - Team member 1, Team member 2,..."
+  - name: "Drew Maichle"
     affiliations:
       - name: "College of Information Science, University of Arizona"
 description: "Project description"
@@ -21,3 +21,7 @@ jupyter: python3
 ## Abstract
 
 Add project abstract here.
+This project was designed to investigate the DVOA performance stat utilized to quantify performance in the NFL
+ and see if there is a link between the season DVOA averages for a team vs. their scores in weekly matchups.
+ In addition, I added additional metrics such as how many days of rest each team is on along with indoor vs.
+  outdoor venue and game service to create a ridge regression model with the goal of predicting scores. 
